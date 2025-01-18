@@ -1,0 +1,10 @@
+<div class="form-inline mb-3">
+    <input type="text" id="ingredient" class="form-control" placeholder="&#xf107; Dodaj składnik">
+    <select id="category" class="form-select">
+        <option value="">Wybierz kategorię</option>
+        <option *ngFor="let category of products.categories" [value]="category">
+            {{firstCharToUpper(category)}}
+        </option>
+    </select>
+    <button id="add-ingredient" class="btn btn-success">Dodaj</button>
+</div>

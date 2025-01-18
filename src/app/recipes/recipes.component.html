@@ -1,0 +1,42 @@
+<button id="search-recipes" class="btn btn-primary w-100 mt-3">Szukaj przepisów</button>
+
+<div class="recipes mt-4" id="recipes">
+    <!-- Przykładowe przepisy -->
+    <div class="recipe">
+        <h3>Spaghetti Carbonara</h3>
+        <button class="toggle-button" onclick="this.parentElement.classList.toggle('open')">
+            <span>Szczegóły</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+        <div class="expandable">
+            <ul class="list-unstyled mt-3">
+                <li>Spaghetti</li>
+                <li>Boczek</li>
+                <li>Jajka</li>
+                <li>Parmezan</li>
+                <li>Czarny pieprz</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="recipe">
+        <h3>Sałatka z Kurczakiem</h3>
+        <button class="toggle-button" onclick="this.parentElement.classList.toggle('open')">
+            <span>Szczegóły</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+        <div class="expandable">
+            <ul class="list-unstyled mt-3">
+                <li>Grillowany kurczak</li>
+                <li>Sałata</li>
+                <li>Pomidorki koktajlowe</li>
+                <li>Ogórek</li>
+                <li>Oliwa z oliwek</li>
+            </ul>
+        </div>
+    </div>
+</div>
