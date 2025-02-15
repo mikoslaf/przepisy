@@ -12,6 +12,16 @@ export class ProductsService {
   
   constructor() {
     this.load();
+   // console.log(new AIService().AI())
+   this.addProduct("jabłko", "owoce");
+    this.addProduct("banan", "owoce");
+    this.addProduct("pomidor", "warzywa");
+    this.addProduct("ogórek", "warzywa");
+    this.addProduct("mleko", "nabiał");
+    this.addProduct("ser", "nabiał");
+    this.addProduct("kurczak", "mięso");
+    this.addProduct("wieprzowina", "mięso");
+    this.addProduct("chleb", "pieczywo");
    }
 
   public addProduct(name: string, category: string): void {
@@ -32,18 +42,14 @@ export class ProductsService {
   }
 
   public save(): void {
-    localStorage.setItem('sem3_przep_products', JSON.stringify(this.products));
+    //sessionStorage.setItem('sem3_przep_products', JSON.stringify(this.products));
   }
 
   public load(): void {
-    if(!localStorage){
-      return;
-    }
-    
-    const saved = localStorage.getItem('sem3_przep_products');
-    if(saved){
-      this.products = JSON.parse(saved);
+    try {
+      this.products = JSON.parse(sessionStorage.getItem('sem3_przep_products') || '[]');    
+    } catch (error) {
+      this.products = [];
     }
   }
-
 }

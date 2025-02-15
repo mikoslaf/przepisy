@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HfInference } from '@huggingface/inference';
 import { MessageType } from './message-type';
+import { generateStory } from './gemini';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,14 @@ export class AIService {
     },
   };
 
-  public async AI(system: string, user: string): Promise<string> {
+  public async AI(system: string = this.opisAI.recipe.system, user: string = this.opisAI.recipe.user, model: string = "gemini"): Promise<string> {
+
+    if(model == "gemini"){
+      let response = await generateStory("AIzaSyCXc1CY9k-lj2WrpMFC7VFEa11QAl4u1-g", system + user);
+      console.log(response);
+      return response;
+    }
+
     let out = '';
 
     const systemPrzepis = 'jesteś generatorem przepisów. wynik podaj w korakch wykonania, dodaj liste składników.'
@@ -62,5 +70,6 @@ export class AIService {
     return out.replaceAll("`","").replace("json","");
   }
 
-  constructor() {}
+  constructor() {
+  }
 }
